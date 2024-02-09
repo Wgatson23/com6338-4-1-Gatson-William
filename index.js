@@ -12,7 +12,7 @@ var words = [
   'mango'
 ]
 
- const function loadFunction() {
+ function loadFunction() {
   remainingTries = 10;
   incorrectEl.textContent = ""
   remainingEl.textContent = remainingTries;
@@ -23,6 +23,7 @@ var words = [
 
   for (var i = 0; i < newWordGuess.length; i++) {
     underScore += "_";
+
   }
 
   wordGuess.textContent = underScore;
@@ -43,21 +44,25 @@ var wordGuess = document.getElementById('word-to-guess');
 var newWordGuess;
 loadFunction()
 
+
 document.body.onkeyup = function (e) {
   var key = e.key.toLowerCase()
   console.log(e.key)
 
-  if (newWordGuess.includes(key) && !correctArray.includes(key)) {
-    correctArray.push(key)
-    var underScore = "";
-    for (var i = 0; i < newWordGuess.length; i++) {
-      console.log(newWordGuess[i])
-      if (correctArray.includes(newWordGuess[i])) {
-        underScore += newWordGuess[i];
-      } else {
-        underScore += "_"
-      }
-    }
+  if (newWordGuess.includes(key)) {
+	var underScore = "";
+	correctArray.push(key);
+	for (var i = 0; i < newWordGuess.length; i++) {
+
+
+		if (correctArray.includes(newWordGuess[i])) {
+			underScore += newWordGuess[i];
+		}
+		else {
+			underScore += "_";
+		}
+	}
+	
 
     wordGuess.textContent = underScore;
   } else if(!incorrectArray.includes(key) && !newWordGuess.includes(key)) {

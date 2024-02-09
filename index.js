@@ -12,21 +12,7 @@ var words = [
   'mango'
 ]
 
-var incorrect
-var wins = 0
-var losses = 0
-var winsEl = document.getElementById('wins')
-var lossesEl = document.getElementById('losses')
-var remainingTries = 10
-var previousEl = document.getElementById('previous-word')
-var incorrectEl = document.getElementById('incorrect-letters')
-var remainingEl = document.getElementById('remaining-guesses')
-var correctArray = []
-var incorrectArray = []
-var wordGuess = document.getElementById('word-to-guess');
-var newWordGuess;
-
-const function loadFunction() {
+ const function loadFunction() {
   remainingTries = 10;
   incorrectEl.textContent = ""
   remainingEl.textContent = remainingTries;
@@ -42,7 +28,19 @@ const function loadFunction() {
   wordGuess.textContent = underScore;
 
 }
-
+var incorrect
+var wins = 0
+var losses = 0
+var winsEl = document.getElementById('wins')
+var lossesEl = document.getElementById('losses')
+var remainingTries = 10
+var previousEl = document.getElementById('previous-word')
+var incorrectEl = document.getElementById('incorrect-letters')
+var remainingEl = document.getElementById('remaining-guesses')
+var correctArray = []
+var incorrectArray = []
+var wordGuess = document.getElementById('word-to-guess');
+var newWordGuess;
 loadFunction()
 
 document.body.onkeyup = function (e) {
